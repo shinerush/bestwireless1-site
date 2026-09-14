@@ -1,0 +1,61 @@
+{
+  "_README": "Offers shown site-wide. Edit via admin.html (no code needed) or directly here. 'channel' controls where it shows: in_store = promotable at your stores, online_only = Cricket.com exclusive (shown as informational, never with a store CTA), both = everywhere. ALWAYS paste the Cricket-approved disclaimer into 'disclaimer' before publishing. Offers outside their start/end dates hide automatically.",
+  "last_updated": "2026-09-13",
+  "offers": [
+    {
+      "id": "a17-free",
+      "headline": "Free Samsung Galaxy A17",
+      "detail": "Switch to Cricket on the $60 Supreme Unlimited plan and take the A17 home at no device cost.",
+      "terms_short": "First month service charge & tax due at sale.",
+      "disclaimer": "Must activate new line on the $60 Supreme Unlimited Plan. First month service charge & tax due at sale. Excludes upgrades and multi-month plans. If you take this offer, you will not be able to move to a less expensive rate plan until after your second service charge. Fees may apply. Return within 7 days; up to $25 fee may apply. Port-in pricing available once every 365 days. Phone may be restricted to the Cricket network until completion of 12 months of service. Pricing, terms and restrictions subject to change without notice. Coverage not available everywhere.",
+      "channel": "in_store",
+      "start": "2026-09-01",
+      "end": "2026-12-31",
+      "priority": 1
+    },
+    {
+      "id": "four-lines-100",
+      "headline": "4 lines for $25 each",
+      "detail": "Bring the whole family onto Select Unlimited. $100 a month for four lines.",
+      "terms_short": "After $5 Auto Pay credit starting second month. New lines only.",
+      "disclaimer": "New lines only. Multi-line accounts are eligible for only one $5 Auto Pay credit per account. Multi-line discount requires that all lines on account be on the same plan. Cricket may temporarily slow data speeds if the network is busy. Video streaming limited to standard definition. Migrations from existing Cricket plans are not permitted. Activation fee (in-store, $25/line) and additional one-time fees may apply. Pricing, availability, terms and restrictions subject to change without notice.",
+      "channel": "both",
+      "start": "2026-09-01",
+      "end": "2026-12-31",
+      "priority": 2
+    },
+    {
+      "id": "single-line-35",
+      "headline": "One unlimited line, $35 a month",
+      "detail": "Select Unlimited with Auto Pay. No contract, no overage charges.",
+      "terms_short": "After $5 Auto Pay credit starting second month. New lines only.",
+      "disclaimer": "New lines only. For single line, pay $40 at point of sale; $5/mo. credit requires enrollment in Auto Pay and applies to the second service charge. Cricket may temporarily slow data speeds if the network is busy. Video streaming limited to standard definition. Activation fee (in-store, $25/line) may apply. Pricing, availability, terms and restrictions subject to change without notice.",
+      "channel": "both",
+      "start": "2026-09-01",
+      "end": "2026-12-31",
+      "priority": 3
+    },
+    {
+      "id": "moto-g-stylus-free",
+      "headline": "Free moto g stylus (2025)",
+      "detail": "Bring your number to Cricket and prepay two months on the $60 plan.",
+      "terms_short": "Online only at cricketwireless.com. First 2 months service & tax due at sale.",
+      "disclaimer": "Online only. Requires port-in of a new line on the $60/mo. plan. Pay first two months of service ($120 total) at point of sale, plus device taxes. Limit 2 phones per customer. Excludes upgrades and multi-month plans. Return within 7 days; up to $25 fee may apply. Port-in pricing available once every 365 days. Phone may be restricted to the Cricket network until completion of 6 months of service. Pricing and terms subject to change without notice.",
+      "channel": "online_only",
+      "start": "2026-09-01",
+      "end": "2026-12-31",
+      "priority": 4
+    },
+    {
+      "id": "s25-fe-2999",
+      "headline": "Samsung Galaxy S25 FE for $29.99",
+      "detail": "Switch and prepay three months on the $60 Supreme Unlimited plan.",
+      "terms_short": "Online only at cricketwireless.com. First 3 months service & tax due at sale.",
+      "disclaimer": "Online only. Requires port-in of a new line on the $60/mo. plan. Pay first three months of service ($180 total) at point of sale, plus device taxes. Limit 4 phones per customer. Excludes upgrades and multi-month plans. Return within 7 days; up to $25 fee may apply. Phone may be restricted to the Cricket network until completion of 12 months of service. Pricing and terms subject to change without notice.",
+      "channel": "online_only",
+      "start": "2026-09-01",
+      "end": "2026-12-31",
+      "priority": 5
+    }
+  ]
+}
