@@ -35,8 +35,17 @@
 
     var dev = el("div", "device");
     dev.setAttribute("data-type", p.type);
-    dev.setAttribute("aria-hidden", "true");
-    dev.appendChild(el("span", null, p.brand));
+    var art = document.createElement("img");
+    var file = p.type === "watch" ? "watch"
+      : ["Apple", "Samsung", "Motorola"].indexOf(p.brand) > -1 ? p.brand.toLowerCase()
+      : "generic";
+    art.src = ROOT + "assets/img/device-" + file + ".svg";
+    art.alt = p.name;
+    art.loading = "lazy";
+    dev.appendChild(art);
+    var mark = el("span", null, p.brand);
+    mark.setAttribute("aria-hidden", "true");
+    dev.appendChild(mark);
     li.appendChild(dev);
 
     li.appendChild(el("p", "phone-brand", p.brand));
