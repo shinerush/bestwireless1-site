@@ -17,8 +17,9 @@ export function generateStaticParams() {
   return getStores().map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const s = getStore(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const s = getStore(slug);
   if (!s) return {};
   const title = `Cricket Wireless ${s.city}, ${s.state} — ${s.street}`;
   const description = `Cricket Wireless Authorized Retailer at ${fullAddress(s)}. Phones, plans, activations and bill pay. Open Mon–Sat ${s.hours.mon_sat}. Call ${s.phone}.`;
@@ -39,8 +40,9 @@ function miles(a, b) {
   return 2 * R * Math.asin(Math.sqrt(Math.sin(dLat / 2) ** 2 + Math.sin(dLng / 2) ** 2 * Math.cos(la1) * Math.cos(la2)));
 }
 
-export default function StorePage({ params }) {
-  const store = getStore(params.slug);
+export default async function StorePage({ params }) {
+  const { slug } = await params;
+  const store = getStore(slug);
   if (!store) notFound();
 
   const nearby = store.coords
