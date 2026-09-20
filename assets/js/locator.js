@@ -7,6 +7,7 @@
 
   var CONFIG = window.BW1_CONFIG || {};
   var stores = [];
+  var defaults = null;
   var origin = null;
 
   var els = {};
@@ -70,6 +71,19 @@
     meta.appendChild(h3);
     meta.appendChild(p);
 
+    // Open now / closed, from this store's hours (promo.js supplies the rule).
+    var hrs = s.hours || defaults;
+    if (hrs && window.BW1_openState) {
+      var state = window.BW1_openState(hrs.mon_sat, hrs.sun);
+      if (state) {
+        var chip = document.createElement("span");
+        chip.className = "openchip";
+        chip.setAttribute("data-open", String(state.open));
+        chip.textContent = state.text;
+        meta.appendChild(chip);
+      }
+    }
+
     var actions = document.createElement("div");
     actions.className = "store-actions";
 
@@ -104,17 +118,24 @@
     if (els.count) {
       els.count.textContent = origin
         ? shown.length + " of " + list.length + " stores, closest first"
-        : list.length + " stores";
+        : (shown.length < list.length ? shown.length + " of " : "") + list.length + " stores";
     }
   }
+
+  function located(s) { return typeof s.lat === "number" && typeof s.lng === "number"; }
 
   function sortByDistance() {
     if (!origin) return stores.slice();
     var withDist = stores.map(function (s) {
-      s._dist = haversine(origin, { lat: s.lat, lng: s.lng });
+      s._dist = located(s) ? haversine(origin, { lat: s.lat, lng: s.lng }) : null;
       return s;
     });
-    withDist.sort(function (a, b) { return a._dist - b._dist; });
+    // Stores without coordinates keep their place at the end of the list.
+    withDist.sort(function (a, b) {
+      if (a._dist === null) return b._dist === null ? 0 : 1;
+      if (b._dist === null) return -1;
+      return a._dist - b._dist;
+    });
     return withDist;
   }
 
@@ -152,9 +173,16 @@
     });
 
     if (local.length) {
-      origin = { lat: local[0].lat, lng: local[0].lng };
-      status("Showing stores near " + local[0].city + ".");
-      showNearest();
+      var anchor = local.filter(located)[0];
+      if (anchor) {
+        origin = { lat: anchor.lat, lng: anchor.lng };
+        status("Showing stores near " + anchor.city + ".");
+        showNearest();
+      } else {
+        // No coordinates for the match, so show the matching stores as they are.
+        status("Showing stores in " + local[0].city + ".");
+        render(local);
+      }
       return;
     }
 
@@ -188,11 +216,27 @@
 
     if (!els.list) return;
 
-    fetch((CONFIG.dataBase || "data/") + "stores.json")
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
+    var base = CONFIG.dataBase || "data/";
+    // stores.json holds the addresses; geo.json holds the map coordinates for
+    // them (see tools/geocode.mjs). Missing coordinates only cost the distance
+    // sort, so a failed geo.json still leaves a working store list.
+    Promise.all([
+      fetch(base + "stores.json").then(function (r) { return r.json(); }),
+      fetch(base + "geo.json").then(function (r) { return r.json(); }).catch(function () { return {}; })
+    ])
+      .then(function (res) {
+        var d = res[0], coords = (res[1] && res[1].coords) || {};
+        defaults = (d._defaults && d._defaults.hours) || null;
         stores = (d.stores || []).filter(function (s) { return s.advertised; });
-        render(stores);
+        stores.forEach(function (s) {
+          var c = coords[s.slug];
+          if (c && (s.lat == null || s.lng == null)) { s.lat = c.lat; s.lng = c.lng; }
+        });
+        // stores.html keeps its "closest to you" band empty until the visitor
+        // searches; every other page shows the list straight away.
+        if (els.list.getAttribute("data-initial") !== "none") {
+          render(stores, parseInt(els.list.getAttribute("data-limit"), 10) || 0);
+        }
 
         var geoBtn = $("#use-location");
         if (geoBtn) geoBtn.addEventListener("click", useMyLocation);

@@ -50,7 +50,7 @@
 
     if (o.channel !== "online_only" && storeCtaHref) {
       var a = document.createElement("a");
-      a.className = "btn btn-amber";
+      a.className = "btn";
       a.href = storeCtaHref;
       a.style.alignSelf = "flex-start";
       a.style.marginTop = "0.4rem";
@@ -90,12 +90,32 @@
           var ctaHref = host.getAttribute("data-cta-href");
           var ctaLabel = host.getAttribute("data-cta-label");
 
-          var set = mode === "instore"
+          // "screen" = the tiny card inside the homepage phone artwork.
+          if (mode === "screen") {
+            var pick = live.filter(function (x) { return x.channel !== "online_only"; })[0];
+            host.innerHTML = "";
+            if (!pick) return;
+            var b = document.createElement("b");
+            b.textContent = pick.headline;
+            var sm = document.createElement("small");
+            sm.textContent = pick.terms_short || pick.detail || "";
+            var cta = document.createElement("span");
+            cta.className = "cta";
+            cta.textContent = host.getAttribute("data-cta-label") || "Find your store";
+            host.appendChild(b);
+            host.appendChild(sm);
+            host.appendChild(cta);
+            return;
+          }
+
+          // "featured" = the single top offer a store can honor, for hero banners.
+          var set = mode === "instore" || mode === "featured"
             ? live.filter(function (o) { return o.channel !== "online_only"; })
             : live;
+          if (mode === "featured") set = set.slice(0, 1);
 
           var ul = document.createElement("ul");
-          ul.className = "offer-grid";
+          ul.className = mode === "featured" ? "offer-grid offer-featured" : "offer-grid";
           set.forEach(function (o) { ul.appendChild(card(o, ctaHref, ctaLabel)); });
 
           host.innerHTML = "";

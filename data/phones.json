@@ -1,0 +1,69 @@
+{
+  "_README": "Phones shown on phones.html and the homepage. price is the full retail price as listed on cricketwireless.com on 'checked' (null = no price shown, card says to ask in store). deal.channel follows the same rules as offers.json: online_only deals never get a store call to action. Lower priority numbers show first.",
+  "checked": "2026-09-13",
+  "phones": [
+    {
+      "id": "galaxy-a17",
+      "name": "Samsung Galaxy A17",
+      "brand": "Samsung",
+      "type": "phone",
+      "price": null,
+      "deal": { "text": "Free when you switch on the $60 Supreme Unlimited plan", "channel": "in_store" },
+      "priority": 1
+    },
+    {
+      "id": "moto-g-stylus-2025",
+      "name": "moto g stylus - 2025",
+      "brand": "Motorola",
+      "type": "phone",
+      "price": null,
+      "deal": { "text": "Free when you bring your number and prepay 2 months", "channel": "online_only" },
+      "priority": 2
+    },
+    {
+      "id": "iphone-17-pro-max",
+      "name": "Apple iPhone 17 Pro Max",
+      "brand": "Apple",
+      "type": "phone",
+      "price": 1199.99,
+      "deal": null,
+      "priority": 3
+    },
+    {
+      "id": "galaxy-s25-fe",
+      "name": "Samsung Galaxy S25 FE",
+      "brand": "Samsung",
+      "type": "phone",
+      "price": null,
+      "deal": { "text": "$29.99 when you switch and prepay 3 months", "channel": "online_only" },
+      "priority": 4
+    },
+    {
+      "id": "iphone-16",
+      "name": "Apple iPhone 16",
+      "brand": "Apple",
+      "type": "phone",
+      "price": 729.99,
+      "deal": null,
+      "priority": 5
+    },
+    {
+      "id": "razr-2025",
+      "name": "motorola razr 2025",
+      "brand": "Motorola",
+      "type": "phone",
+      "price": 149.99,
+      "deal": null,
+      "priority": 6
+    },
+    {
+      "id": "apple-watch-series-11",
+      "name": "Apple Watch Series 11",
+      "brand": "Apple",
+      "type": "watch",
+      "price": 489.99,
+      "deal": null,
+      "priority": 7
+    }
+  ]
+}

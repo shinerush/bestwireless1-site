@@ -1,0 +1,236 @@
+{
+  "_README": "Coordinates for the store locator, looked up from the addresses in stores.json (OpenStreetMap / Nominatim, ODbL). stores.json stays the source of truth for addresses; this file only adds map coordinates. Delete a slug here and re-run tools/geocode to look it up again. precision: address = exact street match, zip/city = approximate centre.",
+  "geocoded": "2026-09-20",
+  "coords": {
+    "carrboro": {
+      "lat": 35.91653,
+      "lng": -79.09461,
+      "precision": "address"
+    },
+    "charlotte": {
+      "lat": 35.1460857,
+      "lng": -80.9293613,
+      "precision": "maps-link"
+    },
+    "clyde": {
+      "lat": 35.5915,
+      "lng": -82.92566,
+      "precision": "zip"
+    },
+    "elizabeth-city": {
+      "lat": 36.29009,
+      "lng": -76.25044,
+      "precision": "address"
+    },
+    "fayetteville": {
+      "lat": 35.0429675,
+      "lng": -78.946638,
+      "precision": "maps-link"
+    },
+    "greensboro-battleground-ave": {
+      "lat": 36.1140466,
+      "lng": -79.8351074,
+      "precision": "maps-link"
+    },
+    "greensboro-alamance-church-rd": {
+      "lat": 36.04142,
+      "lng": -79.77046,
+      "precision": "address"
+    },
+    "hillsborough": {
+      "lat": 36.0757,
+      "lng": -79.08724,
+      "precision": "zip"
+    },
+    "mebane": {
+      "lat": 36.0686,
+      "lng": -79.27025,
+      "precision": "address"
+    },
+    "pisgah-forest": {
+      "lat": 35.27601,
+      "lng": -82.70273,
+      "precision": "address"
+    },
+    "raeford": {
+      "lat": 35.0098656,
+      "lng": -79.1732938,
+      "precision": "maps-link"
+    },
+    "reidsville": {
+      "lat": 36.34904,
+      "lng": -79.69278,
+      "precision": "address"
+    },
+    "salisbury": {
+      "lat": 35.69483,
+      "lng": -80.51687,
+      "precision": "address"
+    },
+    "spring-lake": {
+      "lat": 35.170583,
+      "lng": -78.973485,
+      "precision": "maps-link"
+    },
+    "winston-salem": {
+      "lat": 36.15704,
+      "lng": -80.31685,
+      "precision": "address"
+    },
+    "charlottesville-pantops-ctr": {
+      "lat": 38.0308295,
+      "lng": -78.457911,
+      "precision": "maps-link"
+    },
+    "chesapeake-western-branch-blvd": {
+      "lat": 36.86201,
+      "lng": -76.402,
+      "precision": "address"
+    },
+    "chesapeake-sams-cir": {
+      "lat": 36.75813,
+      "lng": -76.23687,
+      "precision": "zip"
+    },
+    "farmville": {
+      "lat": 37.27812,
+      "lng": -78.39916,
+      "precision": "address"
+    },
+    "hampton": {
+      "lat": 37.04848,
+      "lng": -76.39305,
+      "precision": "address"
+    },
+    "petersburg": {
+      "lat": 37.18269,
+      "lng": -77.36845,
+      "precision": "address"
+    },
+    "richmond-chamberlayne-rd": {
+      "lat": 37.60452,
+      "lng": -77.45226,
+      "precision": "address"
+    },
+    "richmond-meadowdale-blvd": {
+      "lat": 37.44786,
+      "lng": -77.47681,
+      "precision": "zip"
+    },
+    "suffolk": {
+      "lat": 36.74312,
+      "lng": -76.58187,
+      "precision": "address"
+    },
+    "virginia-beach-holland-rd": {
+      "lat": 36.8143262,
+      "lng": -76.1087375,
+      "precision": "maps-link"
+    },
+    "virginia-beach-college-park-sq": {
+      "lat": 36.80998,
+      "lng": -76.21712,
+      "precision": "address"
+    },
+    "lexington": {
+      "lat": 35.8189,
+      "lng": -80.23915,
+      "precision": "address"
+    },
+    "durham-duke": {
+      "lat": 36.04958,
+      "lng": -78.9045,
+      "precision": "address"
+    },
+    "durham-university": {
+      "lat": 35.9848,
+      "lng": -78.90964,
+      "precision": "address"
+    },
+    "fuquay-varina": {
+      "lat": 35.59232,
+      "lng": -78.77759,
+      "precision": "address"
+    },
+    "sanford": {
+      "lat": 35.45505,
+      "lng": -79.13928,
+      "precision": "address"
+    },
+    "thomasville": {
+      "lat": 35.873,
+      "lng": -80.07608,
+      "precision": "address"
+    },
+    "kernersville": {
+      "lat": 36.1077,
+      "lng": -80.09865,
+      "precision": "address"
+    },
+    "raleigh": {
+      "lat": 35.86012,
+      "lng": -78.70795,
+      "precision": "address"
+    },
+    "durham-highway-55": {
+      "lat": 35.90533,
+      "lng": -78.89475,
+      "precision": "address"
+    },
+    "newport-news": {
+      "lat": 37.08058,
+      "lng": -76.47682,
+      "precision": "address"
+    },
+    "roxboro": {
+      "lat": 36.40776,
+      "lng": -78.97545,
+      "precision": "address"
+    },
+    "albemarle": {
+      "lat": 35.34452,
+      "lng": -80.19388,
+      "precision": "zip"
+    },
+    "oxford": {
+      "lat": 36.28107,
+      "lng": -78.60338,
+      "precision": "address"
+    },
+    "concord": {
+      "lat": 35.42434,
+      "lng": -80.61593,
+      "precision": "address"
+    },
+    "henderson": {
+      "lat": 36.33248,
+      "lng": -78.43499,
+      "precision": "address"
+    },
+    "richmond-jeff-davis-hwy": {
+      "lat": 37.50836,
+      "lng": -77.44755,
+      "precision": "address"
+    },
+    "winston-salem-university-pkwy": {
+      "lat": 36.12637,
+      "lng": -80.25979,
+      "precision": "address"
+    },
+    "high-point": {
+      "lat": 35.92231,
+      "lng": -79.98089,
+      "precision": "address"
+    },
+    "arden": {
+      "lat": 35.4523627,
+      "lng": -82.5250522,
+      "precision": "maps-link"
+    },
+    "charlottesville-rio-hill": {
+      "lat": 38.0877315,
+      "lng": -78.4750205,
+      "precision": "maps-link"
+    }
+  }
+}

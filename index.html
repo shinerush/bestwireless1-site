@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cricket Wireless Stores in NC &amp; VA | Best Wireless 1</title>
-<meta name="description" content="Best Wireless 1 is a Cricket Wireless Authorized Retailer with stores across North Carolina and Virginia. Find your nearest store, see current phone deals, and get directions.">
+<meta name="description" content="Best Wireless 1 is a Cricket Wireless Authorized Retailer with stores across North Carolina and Virginia. Find your nearest store, compare plans, shop phones and see current deals.">
 <link rel="canonical" href="https://www.bestwireless1.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cricket Wireless Stores in NC &amp; VA | Best Wireless 1">
-<meta property="og:description" content="Find your nearest Best Wireless 1 store, see current Cricket Wireless deals, and get directions.">
+<meta property="og:description" content="Best Wireless 1 is a Cricket Wireless Authorized Retailer with stores across North Carolina and Virginia. Find your nearest store, compare plans, shop phones and see current deals.">
 <meta property="og:url" content="https://www.bestwireless1.com/">
 <meta property="og:image" content="https://www.bestwireless1.com/assets/images/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
 <script type="application/ld+json">
 {
@@ -31,100 +31,215 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
+<div class="utility">
+  <div class="wrap">
+    <a href="stores.html">Find a store</a>
+    <a href="https://www.cricketwireless.com/map.html" target="_blank" rel="noopener">Coverage map</a>
+    <a href="https://www.cricketwireless.com/quickpay.html" target="_blank" rel="noopener">Pay bill</a>
+    <a href="https://www.cricketwireless.com/cwlogin.html" target="_blank" rel="noopener">My account</a>
+    <a href="https://espanol.cricketwireless.com/" target="_blank" rel="noopener" lang="es">Español</a>
+  </div>
+</div>
 <header class="masthead">
   <div class="wrap">
-    <a class="brand" href="/">Best Wireless 1<span>Cricket Wireless Authorized Retailer</span></a>
+    <a class="brand" href="index.html">Best Wireless 1<span>Cricket Wireless Authorized Retailer</span></a>
     <nav aria-label="Main">
       <ul>
+        <li><a href="phones.html">Phones</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="deals.html">Deals</a></li>
         <li><a href="stores.html">Stores</a></li>
-        <li><a href="#offers">Deals</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+    <a class="btn btn-sm head-cta" href="stores.html">Find a store</a>
   </div>
 </header>
 
 <main id="main">
-
-  <section class="finder">
-    <div class="wrap">
-      <h1>Find your Cricket store</h1>
-      <p class="lede">27 locations across North Carolina, with Virginia stores on the way.</p>
-
-      <form id="finder-form" class="searchbar" role="search">
-        <label for="finder-input" class="skip">ZIP code or city</label>
-        <input id="finder-input" type="search" inputmode="numeric"
-               placeholder="ZIP code or city" autocomplete="postal-code">
-        <button class="btn" type="submit">Search</button>
-        <button class="btn btn-ghost" type="button" id="use-location">Use my location</button>
-      </form>
-      <p class="finder-status" id="finder-status" role="status" aria-live="polite"></p>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Cricket Wireless Authorized Retailer</p>
+        <h1>Great phones. Great plans. <em>Right around the corner.</em></h1>
+        <p class="lede">Shop Cricket Wireless phones and plans at 32 stores in North Carolina and 14 in Virginia. Switch, upgrade or pay your bill in person.</p>
+        <div class="cta-row">
+          <a class="btn" href="phones.html">Shop phones</a>
+          <a class="btn btn-outline" href="plans.html">See plans</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="halo" aria-hidden="true"></div>
+        <div class="handset">
+          <div class="screen">
+            <p class="sbar">Best Wireless 1</p>
+            <div class="card" data-offers="screen" data-cta-label="Find your store"></div>
+            <div class="pinrow"><i>&#9679;</i><span>46 stores across NC &amp; VA</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="results">
+  <section class="locator">
     <div class="wrap">
-      <div class="results-head">
-        <h2>Our stores</h2>
-        <p class="results-count" id="store-count">Loading&hellip;</p>
+      <div class="locator-card">
+        <div class="results-head">
+          <h2>Find a store near you</h2>
+          <p class="results-count" id="store-count">Loading&hellip;</p>
+        </div>
+        <form id="finder-form" class="searchbar" role="search">
+          <label for="finder-input" class="skip">ZIP code or city</label>
+          <input id="finder-input" type="search" inputmode="numeric"
+                 placeholder="Enter ZIP code or city" autocomplete="postal-code">
+          <button class="btn" type="submit">Search</button>
+          <button class="btn btn-ghost" type="button" id="use-location">Use my location</button>
+        </form>
+        <p class="finder-status" id="finder-status" role="status" aria-live="polite"></p>
+        <ul class="store-list" id="store-list" data-limit="4"></ul>
+        <p style="margin:1.2rem 0 0"><a href="stores.html" style="font-weight:600;text-decoration:none">See all 46 stores &rsaquo;</a></p>
       </div>
-      <ul class="store-list" id="store-list"></ul>
-      <p style="margin-top:1.2rem"><a class="btn" href="stores.html">See all stores</a></p>
+    </div>
+  </section>
+
+  <section class="trust band" aria-label="Why Cricket" style="padding-block:2.5rem 0">
+    <div class="wrap">
+      <ul>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a9 9 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg></span><div><strong>5G on the AT&amp;T network</strong><span class="sub">Coverage not available everywhere</span></div></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg></span><div><strong>No annual contract</strong><span class="sub">Pay month to month</span></div></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.6-.7-1.6-1.1-2.6-1.1-1.6 0-2.6.8-2.6 1.9 0 2.6 5.4 1.4 5.4 4.1 0 1.2-1.1 2-2.8 2-1.1 0-2.1-.4-2.7-1.1"/><path d="M12 7v10"/></svg></span><div><strong>No overage charges</strong><span class="sub">No surprise bills</span></div></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-10.5A7 7 0 0 0 5 10.5C5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.5"/></svg></span><div><strong>46 local stores</strong><span class="sub">Setup help in person</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band-mist" id="plan-finder">
+    <div class="wrap">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Plan finder</p>
+          <h2>Find your plan in 30 seconds</h2>
+        </div>
+        <p>Four quick questions. No sign-up.</p>
+      </div>
+      <div data-plan-finder></div>
+    </div>
+  </section>
+
+  <section class="band" id="plans">
+    <div class="wrap">
+      <div class="band-head">
+        <h2>Plans</h2>
+        <a href="plans.html#compare">Compare all plans &rsaquo;</a>
+      </div>
+      <div data-plans="monthly"></div>
+      <p class="fine" data-plan-fineprint></p>
     </div>
   </section>
 
   <section class="offers" id="offers">
     <div class="wrap">
-      <h2>What&rsquo;s running right now</h2>
-      <p class="sub">Offers change often. Call your store to confirm availability before you drive out.</p>
+      <div class="band-head">
+        <div>
+          <h2>Current deals</h2>
+          <p class="sub" style="margin:0">Offers change often. Call your store to confirm availability before you drive out.</p>
+        </div>
+        <a href="deals.html">All deals &rsaquo;</a>
+      </div>
       <div data-offers="all" data-cta-href="stores.html" data-cta-label="Find your store"></div>
     </div>
   </section>
 
+  <section class="band">
+    <div class="wrap">
+      <div class="band-head">
+        <h2>Popular phones</h2>
+        <a href="phones.html">Shop all phones &rsaquo;</a>
+      </div>
+      <div data-phones data-limit="4"></div>
+    </div>
+  </section>
+
+  <section class="band band-mist">
+    <div class="wrap">
+      <ul class="cards3">
+        <li class="card card-dark">
+          <p class="eyebrow" style="color:var(--signal)">Bring your own phone</p>
+          <h3>Keep the phone you love</h3>
+          <p>Bring it into any of our stores. We&rsquo;ll check it works on Cricket and help move your number over.</p>
+          <a class="btn" href="stores.html">Find a store</a>
+        </li>
+        <li class="card">
+          <p class="eyebrow">Coverage</p>
+          <h3>Check coverage near you</h3>
+          <p>See Cricket&rsquo;s 5G coverage where you live, work and travel.</p>
+          <a class="btn btn-outline" href="https://www.cricketwireless.com/map.html" target="_blank" rel="noopener">Open coverage map</a>
+        </li>
+        <li class="card">
+          <p class="eyebrow">Bill pay</p>
+          <h3>Pay your bill</h3>
+          <p>Pay online in a minute, or pay in person at any of our stores.</p>
+          <a class="btn btn-outline" href="https://www.cricketwireless.com/quickpay.html" target="_blank" rel="noopener">Pay online</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:clamp(2.5rem,6vw,4rem)">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Ready to switch to Cricket?</h2>
+          <p>Bring your phone and your number to any of our 46 stores. We&rsquo;ll get you set up.</p>
+        </div>
+        <a class="btn btn-light" href="stores.html">Find a store</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div>
-        <h3>Stores</h3>
-        <ul>
-          <li><a href="stores.html">All locations</a></li>
-          <li><a href="stores.html#nc">North Carolina</a></li>
-          <li><a href="stores.html#va">Virginia</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="careers.html">Apply for a job</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Cricket Wireless</h3>
-        <ul>
-          <li><a href="https://www.cricketwireless.com/quickpay.html" rel="noopener">Pay your bill</a></li>
-          <li><a href="https://www.cricketwireless.com/map.html" rel="noopener">Coverage map</a></li>
-          <li><a href="https://www.cricketwireless.com/support" rel="noopener">Cricket support</a></li>
-        </ul>
-      </div>
+      <div><h3>Shop</h3><ul>
+        <li><a href="phones.html">Phones</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="https://www.cricketwireless.com/shop/bring-your-phone" target="_blank" rel="noopener">Bring your own phone</a></li>
+      </ul></div>
+      <div><h3>Stores</h3><ul>
+        <li><a href="stores.html">All locations</a></li>
+        <li><a href="stores.html#nc">North Carolina</a></li>
+        <li><a href="stores.html#va">Virginia</a></li>
+      </ul></div>
+      <div><h3>Company</h3><ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul></div>
+      <div><h3>Cricket Wireless</h3><ul>
+        <li><a href="https://www.cricketwireless.com/quickpay.html" target="_blank" rel="noopener">Pay your bill</a></li>
+        <li><a href="https://www.cricketwireless.com/map.html" target="_blank" rel="noopener">Coverage map</a></li>
+        <li><a href="https://www.cricketwireless.com/cwlogin.html" target="_blank" rel="noopener">My account</a></li>
+        <li><a href="https://www.cricketwireless.com/support" target="_blank" rel="noopener">Cricket support</a></li>
+      </ul></div>
     </div>
     <p class="fineprint">
       Best Wireless 1, Inc. is an authorized retailer of Cricket Wireless. Cricket, Cricket Wireless and
       related marks are trademarks of AT&amp;T Intellectual Property. Offers, pricing and availability are
       set by Cricket Wireless and are subject to change without notice. Not all offers are available at
       every location. Coverage is not available everywhere.
-      &copy; <span id="yr">2026</span> Best Wireless 1, Inc.
+      &copy; 2026 Best Wireless 1, Inc.
     </p>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="assets/js/config.js"></script>
+<script src="assets/js/promo.js"></script>
 <script src="assets/js/locator.js"></script>
 <script src="assets/js/offers.js"></script>
+<script src="assets/js/plans.js"></script>
+<script src="assets/js/phones.js"></script>
 </body>
 </html>

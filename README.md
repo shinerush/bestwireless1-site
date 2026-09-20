@@ -6,12 +6,11 @@ Netlify, Cloudflare Pages, or any normal web host via FTP.
 ## Try it now
 
 ```bash
-cd bw1
-python3 -m http.server 8000
+npx serve .
 ```
 
-Open `http://localhost:8000`. Everything works offline except the map iframes,
-which need a Google Maps key.
+Or any static file server. Open the address it prints. Everything works
+offline except the store maps, which load from OpenStreetMap.
 
 ## What's here
 
@@ -19,32 +18,65 @@ which need a Google Maps key.
 |---|---|
 | `data/stores.json` | **Every location.** The only file you edit to add or change a store. |
 | `data/offers.json` | Every offer. Edit through `admin.html` rather than by hand. |
-| `build.py` | Regenerates all store pages, `stores.html`, `sitemap.xml`, `robots.txt`. |
+| `tools/build.mjs` | **The builder.** Regenerates all store pages, `stores.html`, `sitemap.xml`, `robots.txt`. |
+| `tools/import-locations.mjs` | Rebuilds `data/stores.json` from the locations spreadsheet (save the .xls as CSV first). |
+| `tools/geocode.mjs` | Looks up map coordinates for new store addresses and writes `data/geo.json`. |
+| `data/geo.json` | Map coordinates per store, for distance sorting and the store maps. |
+| `build.py` | The original Python builder, kept for reference. `tools/build.mjs` is what runs now. |
+| `data/plans.json` | Plans, prices and comparison rows for `plans.html`, the homepage and the plan finder quiz. |
+| `data/phones.json` | Phones, prices and phone deals for `phones.html` and the homepage. |
 | `admin.html` | Offer manager. No code required. |
-| `index.html` | Homepage with the locator and offers. |
+| `index.html` | Homepage: locator, featured deal, plan finder, plans, deals, phones. |
+| `phones.html`, `plans.html`, `deals.html` | Shop pages. Content loads from the JSON files above. |
+| `about.html`, `contact.html`, `careers.html` | Company pages. Search for `TODO` for details still to add. |
 | `assets/js/config.js` | API keys and analytics IDs. |
 
-Run `python3 build.py` after any change to `stores.json`. It prints a report of
-exactly what data is still missing.
+Run this after any change to `data/stores.json`:
+
+```bash
+node tools/build.mjs
+```
+
+It rebuilds every store page, deletes pages for stores that were dropped, and
+prints a report of what data is still missing. If you added a store, run
+`node tools/geocode.mjs` first so it has map coordinates.
+
+**Maps:** with no Google Maps key in `assets/js/config.js`, store pages embed
+OpenStreetMap, which needs no key and costs nothing. Add a Google key and
+rebuild to switch to Google Maps with your own place pins.
 
 ## Before this goes live
 
-1. **Add the 12 Virginia stores** to `data/stores.json`.
-2. **Real coordinates.** Current lat/lng are city-center approximations, so
-   distance sorting is accurate to roughly 1–3 miles. Geocode the real addresses.
-3. **Google Place IDs** for all 39. This unlocks correct map pins, reviews, and
-   the Google Business Profile link. Find them at
-   `https://developers.google.com/maps/documentation/places/web-service/place-id`.
-4. **ZIP codes** — 26 of 27 are missing. Schema markup needs them.
-5. **Verify hours per store.** Every store currently inherits Mon–Sat 10–8,
-   Sun 12–6, which was only confirmed for the Duke Street location.
-6. **Store photos** at `assets/images/stores/<slug>.jpg` (3:2 ratio), then set
+All 46 stores (32 NC, 14 VA) come from the client's locations spreadsheet:
+addresses, ZIP codes, phone numbers, per-store hours and Google Place IDs.
+Every store has map coordinates in `data/geo.json`.
+
+1. **Nine missing Place IDs.** These stores were supplied with a short
+   `maps.app.goo.gl` link instead of a full Google Maps link, so there is no
+   Place ID to read: arden, charlotte, charlottesville-pantops-ctr,
+   charlottesville-rio-hill, fayetteville, greensboro-battleground-ave,
+   raeford, spring-lake, virginia-beach-holland-rd. Their coordinates are exact,
+   so maps and directions work; what's missing is the Google reviews link.
+2. **Five approximate pins:** chesapeake-sams-cir, albemarle, clyde,
+   hillsborough, richmond-meadowdale-blvd matched at ZIP level, so the pin can
+   be a street or two off. Fix by editing `data/geo.json`.
+3. **Store photos** at `assets/images/stores/<slug>.jpg` (3:2 ratio), then set
    `"photo": true` for that store.
-7. **Google Maps API key** into `assets/js/config.js`, and replace `YOUR_KEY`
-   in `build.py`'s map iframe URL before rebuilding. Restrict the key by HTTP
-   referrer to `bestwireless1.com`.
-8. **Cricket compliance review** of every offer disclaimer in `offers.json`.
-9. **GA4 and Meta Pixel IDs** into `config.js`.
+4. **Google Maps API key** into `assets/js/config.js`, then rebuild, to switch
+   the maps from OpenStreetMap to Google. Restrict the key by HTTP referrer to
+   `bestwireless1.com`.
+5. **Cricket compliance review** of every offer disclaimer in `offers.json`.
+6. **GA4, Meta, TikTok and Snapchat IDs** into `config.js`.
+
+## When the locations list changes
+
+The client sends an .xls of locations. Save it as CSV, then:
+
+```bash
+node tools/import-locations.mjs "locations.csv"
+node tools/geocode.mjs
+node tools/build.mjs
+```
 
 ## Redirects from the old site
 
@@ -56,8 +88,8 @@ they have. On Netlify, create a `_redirects` file:
 /branches/2.html   /stores/durham-university-dr.html   301
 ```
 
-...and so on for all 27. On Apache, use `.htaccess` with `Redirect 301`.
-`build.py` can generate this list if you want it automated.
+...and so on for every old URL. On Apache, use `.htaccess` with `Redirect 301`.
+Map each old branch page to the store page with the same address.
 
 ## Adding an offer
 

@@ -24,8 +24,8 @@ SITE = "https://www.bestwireless1.com"
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600'
-         '&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">')
+         '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800'
+         '&display=swap" rel="stylesheet">')
 
 
 def esc(s):
@@ -33,17 +33,38 @@ def esc(s):
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def masthead(prefix):
-    return f'''<header class="masthead">
+CRICKET = "https://www.cricketwireless.com"
+
+
+def masthead(prefix, current="stores"):
+    def item(key, href, label):
+        cur = ' aria-current="page"' if key == current else ""
+        return f'        <li><a href="{prefix}{href}"{cur}>{label}</a></li>'
+    items = "\n".join([
+        item("phones", "phones.html", "Phones"),
+        item("plans", "plans.html", "Plans"),
+        item("deals", "deals.html", "Deals"),
+        item("stores", "stores.html", "Stores"),
+        item("about", "about.html", "About"),
+    ])
+    return f'''<div class="utility">
+  <div class="wrap">
+    <a href="{prefix}stores.html">Find a store</a>
+    <a href="{CRICKET}/map.html" target="_blank" rel="noopener">Coverage map</a>
+    <a href="{CRICKET}/quickpay.html" target="_blank" rel="noopener">Pay bill</a>
+    <a href="{CRICKET}/cwlogin.html" target="_blank" rel="noopener">My account</a>
+    <a href="https://espanol.cricketwireless.com/" target="_blank" rel="noopener" lang="es">Español</a>
+  </div>
+</div>
+<header class="masthead">
   <div class="wrap">
     <a class="brand" href="{prefix}index.html">Best Wireless 1<span>Cricket Wireless Authorized Retailer</span></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="{prefix}stores.html">Stores</a></li>
-        <li><a href="{prefix}index.html#offers">Deals</a></li>
-        <li><a href="{prefix}about.html">About</a></li>
+{items}
       </ul>
     </nav>
+    <a class="btn btn-sm head-cta" href="{prefix}stores.html">Find a store</a>
   </div>
 </header>'''
 
@@ -52,6 +73,12 @@ def footer(prefix):
     return f'''<footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
+      <div><h3>Shop</h3><ul>
+        <li><a href="{prefix}phones.html">Phones</a></li>
+        <li><a href="{prefix}plans.html">Plans</a></li>
+        <li><a href="{prefix}deals.html">Deals</a></li>
+        <li><a href="{CRICKET}/shop/bring-your-phone" target="_blank" rel="noopener">Bring your own phone</a></li>
+      </ul></div>
       <div><h3>Stores</h3><ul>
         <li><a href="{prefix}stores.html">All locations</a></li>
         <li><a href="{prefix}stores.html#nc">North Carolina</a></li>
@@ -59,13 +86,14 @@ def footer(prefix):
       </ul></div>
       <div><h3>Company</h3><ul>
         <li><a href="{prefix}about.html">About us</a></li>
-        <li><a href="{prefix}careers.html">Apply for a job</a></li>
+        <li><a href="{prefix}careers.html">Careers</a></li>
         <li><a href="{prefix}contact.html">Contact us</a></li>
       </ul></div>
       <div><h3>Cricket Wireless</h3><ul>
-        <li><a href="https://www.cricketwireless.com/quickpay.html" rel="noopener">Pay your bill</a></li>
-        <li><a href="https://www.cricketwireless.com/map.html" rel="noopener">Coverage map</a></li>
-        <li><a href="https://www.cricketwireless.com/support" rel="noopener">Cricket support</a></li>
+        <li><a href="{CRICKET}/quickpay.html" target="_blank" rel="noopener">Pay your bill</a></li>
+        <li><a href="{CRICKET}/map.html" target="_blank" rel="noopener">Coverage map</a></li>
+        <li><a href="{CRICKET}/cwlogin.html" target="_blank" rel="noopener">My account</a></li>
+        <li><a href="{CRICKET}/support" target="_blank" rel="noopener">Cricket support</a></li>
       </ul></div>
     </div>
     <p class="fineprint">
@@ -333,7 +361,8 @@ def stores_index(stores, hours):
 
 
 def sitemap(stores):
-    urls = [f"{SITE}/", f"{SITE}/stores.html", f"{SITE}/about.html", f"{SITE}/contact.html"]
+    urls = [f"{SITE}/", f"{SITE}/stores.html", f"{SITE}/phones.html", f"{SITE}/plans.html",
+            f"{SITE}/deals.html", f"{SITE}/about.html", f"{SITE}/contact.html", f"{SITE}/careers.html"]
     urls += [f"{SITE}/stores/{s['slug']}.html" for s in stores]
     today = date.today().isoformat()
     body = "".join(

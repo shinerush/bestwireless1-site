@@ -1,0 +1,103 @@
+{
+  "_README": "Plans shown on plans.html and the homepage. Prices are what cricketwireless.com showed on 'checked'. autopay_price is the monthly price after the $5 AutoPay credit; first_month is what the customer pays at sale. Re-check against Cricket dealer materials before every price change goes live.",
+  "checked": "2026-09-13",
+  "monthly": [
+    {
+      "id": "sensible-10gb",
+      "name": "Sensible 10GB",
+      "autopay_price": 30,
+      "first_month": 35,
+      "new_lines_only": false,
+      "highlights": [
+        "10GB of high-speed data",
+        "5G access",
+        "Extra data $10 per 1GB"
+      ],
+      "compare": {
+        "data": "10GB high-speed",
+        "hotspot": "Not included",
+        "streaming": "Not included",
+        "cloud": "Not included",
+        "international": "Not included"
+      }
+    },
+    {
+      "id": "select-unlimited",
+      "name": "Select Unlimited",
+      "autopay_price": 35,
+      "first_month": 40,
+      "new_lines_only": true,
+      "highlights": [
+        "Unlimited data on nationwide 5G",
+        "Calls and texts to Mexico & Canada",
+        "Video streams in SD"
+      ],
+      "compare": {
+        "data": "Unlimited",
+        "hotspot": "Not included",
+        "streaming": "SD video",
+        "cloud": "Not included",
+        "international": "Calls & texts to Mexico & Canada"
+      }
+    },
+    {
+      "id": "smart-unlimited",
+      "name": "Smart Unlimited",
+      "autopay_price": 45,
+      "first_month": 50,
+      "new_lines_only": false,
+      "highlights": [
+        "Unlimited data",
+        "15GB mobile hotspot",
+        "100GB cloud storage",
+        "Unlimited texts from the U.S. to 200+ countries"
+      ],
+      "compare": {
+        "data": "Unlimited",
+        "hotspot": "15GB",
+        "streaming": "Not included",
+        "cloud": "100GB",
+        "international": "Texts to 200+ countries; use in Mexico & Canada"
+      }
+    },
+    {
+      "id": "supreme-unlimited",
+      "name": "Supreme Unlimited",
+      "autopay_price": 55,
+      "first_month": 60,
+      "new_lines_only": false,
+      "highlights": [
+        "Unlimited high-speed data",
+        "50GB mobile hotspot",
+        "HBO Max Basic with Ads included",
+        "150GB cloud storage"
+      ],
+      "compare": {
+        "data": "Unlimited high-speed",
+        "hotspot": "50GB",
+        "streaming": "HBO Max Basic with Ads",
+        "cloud": "150GB",
+        "international": "Texts to 200+ countries"
+      }
+    }
+  ],
+  "prepaid": [
+    {
+      "id": "three-month-unlimited",
+      "name": "3-Month Unlimited",
+      "months": 3,
+      "total": 45,
+      "per_month": 15,
+      "highlights": ["Unlimited data", "Pay once, covered for 3 months"]
+    },
+    {
+      "id": "twelve-month-unlimited",
+      "name": "12-Month Unlimited",
+      "months": 12,
+      "total": 300,
+      "per_month": 25,
+      "highlights": ["Unlimited data", "Pay once, covered for a full year"]
+    }
+  ],
+  "fine_print": "Prices shown with $5/mo. AutoPay credit, which starts with the second month of service. Taxes and fees extra. Cricket may temporarily slow data speeds if the network is busy. Plans, pricing and features are set by Cricket Wireless and may change without notice. Ask in store for multi-line pricing."
+}

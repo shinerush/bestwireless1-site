@@ -1,0 +1,7 @@
+# local tooling output
+.edge/
+*.log
+node_modules/
+
+# internal ads work, not for the public site repo
+marketing/
