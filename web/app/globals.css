@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Cricket Wireless brand tokens, taken from their own stylesheet. */
+@theme {
+  --color-brand: #40a829;
+  --color-brand-dark: #2f8a1e;
+  --color-brand-deep: #044a07;
+  --color-brand-light: #a1cb09;
+  --color-brand-tint: #ecf6e4;
+  --color-navy: #003e7f;
+  --color-navy-light: #3170b7;
+  --color-sky: #7fc8ed;
+  --color-gold: #ffcd00;
+  --color-ink: #000000;
+  --color-ink-soft: #404041;
+  --color-muted: #5e5e5e;
+  --color-line: #e1dfe1;
+  --color-shell: #f6f6f6;
+
+  --font-sans: system-ui, "Segoe UI", Ubuntu, Cantarell, "Noto Sans", -apple-system,
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-ink);
+  background: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

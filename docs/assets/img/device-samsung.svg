@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 460" role="img" aria-label="Samsung phone">
+  <defs>
+    <linearGradient id="ws" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0%" stop-color="#A88BFF"/><stop offset="100%" stop-color="#3B2A8C"/>
+    </linearGradient>
+    <linearGradient id="bs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3D4753"/><stop offset="100%" stop-color="#161C22"/>
+    </linearGradient>
+    <linearGradient id="gs" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.34"/>
+      <stop offset="55%" stop-color="#fff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ss" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#0d1b12" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0d1b12" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="210" cy="436" rx="150" ry="18" fill="url(#ss)"/>
+
+  <!-- back view -->
+  <g transform="rotate(-7 250 230)">
+    <rect x="168" y="66" width="164" height="330" rx="30" fill="url(#bs)"/>
+    <rect x="174" y="72" width="152" height="318" rx="25" fill="#222A31"/>
+    <rect x="206" y="146" width="52" height="118" rx="26" fill="#1A2026"/>
+       <circle cx="232" cy="172" r="14" fill="#0A0E12" stroke="#7E8792" stroke-width="3"/><circle cx="232" cy="208" r="14" fill="#0A0E12" stroke="#7E8792" stroke-width="3"/><circle cx="232" cy="244" r="14" fill="#0A0E12" stroke="#7E8792" stroke-width="3"/>
+  </g>
+
+  <!-- front view -->
+  <g transform="rotate(5 150 240)">
+    <rect x="72" y="52" width="176" height="356" rx="32" fill="url(#bs)"/>
+    <rect x="79" y="59" width="162" height="342" rx="26" fill="#0B0F13"/>
+    <rect x="86" y="66" width="148" height="328" rx="21" fill="url(#ws)"/>
+    <path d="M86 87a21 21 0 0 1 21-21h127v120z" fill="url(#gs)"/>
+    <circle cx="160" cy="80" r="6.5" fill="#0B0F13"/>
+    <g fill="#ffffff" opacity="0.9">
+      <rect x="104" y="112" width="58" height="8" rx="4"/>
+      <rect x="104" y="128" width="96" height="12" rx="6"/>
+    </g>
+    <rect x="102" y="164" width="116" height="74" rx="13" fill="#ffffff" opacity="0.93"/>
+    <g fill="#C8D2CB">
+      <rect x="114" y="178" width="44" height="7" rx="3.5"/>
+      <rect x="114" y="192" width="86" height="10" rx="5"/>
+      <rect x="114" y="210" width="62" height="10" rx="5"/>
+    </g>
+    <rect x="102" y="252" width="116" height="52" rx="13" fill="#ffffff" opacity="0.78"/>
+    <g fill="#C8D2CB">
+      <rect x="114" y="266" width="76" height="8" rx="4"/>
+      <rect x="114" y="282" width="52" height="8" rx="4"/>
+    </g>
+    <rect x="132" y="378" width="56" height="5" rx="2.5" fill="#ffffff" opacity="0.5"/>
+  </g>
+</svg>

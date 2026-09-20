@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 460" role="img" aria-label="Smartwatch">
+  <defs>
+    <linearGradient id="wb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5A6470"/><stop offset="100%" stop-color="#232A31"/></linearGradient>
+    <linearGradient id="ws" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0%" stop-color="#8FE04F"/><stop offset="60%" stop-color="#2F8A1E"/><stop offset="100%" stop-color="#04482A"/></linearGradient>
+    <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff" stop-opacity="0.32"/><stop offset="60%" stop-color="#fff" stop-opacity="0.04"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="wsh" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#0d1b12" stop-opacity="0.3"/><stop offset="100%" stop-color="#0d1b12" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="210" cy="430" rx="120" ry="16" fill="url(#wsh)"/>
+  <path d="M158 70h104c10 0 18 8 18 18v42H140V88c0-10 8-18 18-18z" fill="#3A434C"/>
+  <path d="M140 330h140v42c0 10-8 18-18 18H158c-10 0-18-8-18-18z" fill="#3A434C"/>
+  <rect x="128" y="120" width="164" height="220" rx="52" fill="url(#wb)"/>
+  <rect x="139" y="131" width="142" height="198" rx="44" fill="#0B0F13"/>
+  <rect x="147" y="139" width="126" height="182" rx="38" fill="url(#ws)"/>
+  <path d="M147 177a38 38 0 0 1 38-38h88v90z" fill="url(#wg)"/>
+  <g fill="#ffffff" opacity="0.92">
+    <rect x="168" y="176" width="52" height="9" rx="4.5"/>
+    <rect x="168" y="194" width="84" height="22" rx="8"/>
+    <rect x="168" y="226" width="66" height="9" rx="4.5"/>
+  </g>
+  <rect x="168" y="254" width="84" height="18" rx="9" fill="#ffffff" opacity="0.28"/>
+  <rect x="292" y="176" width="8" height="34" rx="4" fill="#6B7580"/>
+  <rect x="292" y="222" width="8" height="24" rx="4" fill="#6B7580"/>
+</svg>

@@ -160,7 +160,7 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 
 /* ---------- Section scaffolding ---------- */
 
-.band { padding-block: clamp(3rem, 7vw, 5rem); }
+.band { padding-block: clamp(2.5rem, 5vw, 3.5rem); }
 .band-mist { background: var(--mist); }
 .band-head {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -194,9 +194,9 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 /* ---------- Homepage hero ---------- */
 
 .hero {
-  position: relative; overflow: hidden; color: #fff;
-  background: radial-gradient(ellipse at bottom, var(--brand-bright) 10%, var(--brand) 70%);
-  padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(6rem, 12vw, 8rem);
+  position: relative; color: #fff;
+  background: var(--brand);
+  padding-block: clamp(2rem, 4vw, 3rem) clamp(5rem, 10vw, 7rem);
 }
 .hero-grid { position: relative; z-index: 1; display: grid; gap: 2.5rem; align-items: center; }
 @media (min-width: 60rem) { .hero-grid { grid-template-columns: 1.2fr 1fr; gap: 4rem; } }
@@ -221,9 +221,9 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 
 .locator { position: relative; z-index: 2; margin-top: clamp(-5.5rem, -9vw, -4rem); }
 .locator-card {
-  background: var(--paper); border-radius: 20px; box-shadow: var(--shadow);
+  background: var(--paper); border-radius: var(--radius); box-shadow: 0 6px 20px rgba(0,0,0,0.10);
   border: 1px solid var(--line);
-  padding: clamp(1.4rem, 3vw, 2.2rem);
+  padding: clamp(1.2rem, 2.4vw, 1.8rem);
 }
 .locator-card .results-head { border: 0; padding: 0; margin-bottom: 1rem; }
 .locator-card h2 { font-size: var(--step-2); }
@@ -277,7 +277,7 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm);
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
-.store-row:hover { border-color: #C9D6CF; box-shadow: var(--shadow-sm); }
+.store-row:hover { border-color: var(--brand); }
 .store-dist {
   font-size: 1.5rem; font-weight: 800; line-height: 1; color: var(--brand-dark);
   text-align: center; font-variant-numeric: tabular-nums;
@@ -312,28 +312,20 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 
 .trust { background: var(--paper); }
 .trust ul {
-  list-style: none; margin: 0; padding: 0.5rem 0 2.5rem;
-  display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  list-style: none; margin: 0; padding: 1.1rem 0;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 2.2rem;
+  border-bottom: 1px solid var(--line);
 }
-.trust li {
-  display: flex; gap: 0.9rem; align-items: center;
-  padding: 1.2rem 1.3rem; border-radius: var(--radius);
-  background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
-}
-.trust .ico {
-  flex: none; width: 3.1rem; height: 3.1rem; border-radius: 14px;
-  display: grid; place-items: center;
-  background: linear-gradient(140deg, var(--brand-tint), #fff);
-  color: var(--brand-dark); border: 1px solid var(--line);
-  font-family: var(--display); font-weight: 700; font-size: 0.95rem;
-}
-.trust .ico svg { width: 1.5rem; height: 1.5rem; }
-.trust strong { display: block; font-size: 1rem; font-weight: 700; line-height: 1.25; }
-.trust span.sub { font-size: 0.82rem; color: var(--slate); }
+.trust li { display: flex; gap: 0.55rem; align-items: center; font-size: 0.92rem; }
+.trust .ico { flex: none; display: grid; place-items: center; color: var(--brand-dark); }
+.trust .ico svg { width: 1.15rem; height: 1.15rem; }
+.trust strong { font-weight: 600; font-size: 0.92rem; }
+.trust span.sub { display: none; }
+.trust li div { display: flex; gap: 0.4rem; align-items: baseline; }
 
 /* ---------- Offers ---------- */
 
-.offers { background: linear-gradient(180deg, var(--brand-wash) 0%, var(--mist) 100%); padding-block: clamp(3rem, 7vw, 5rem); }
+.offers { background: var(--mist); padding-block: clamp(2.5rem, 5vw, 3.5rem); }
 .offers h2 { font-size: var(--step-3); }
 .offers .sub { color: var(--slate); font-size: 1.05rem; }
 
@@ -343,8 +335,8 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 }
 .offer {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.5rem; display: flex; flex-direction: column; color: var(--ink);
-  box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+  padding: 1.3rem; display: flex; flex-direction: column; color: var(--ink);
+  position: relative; overflow: hidden;
 }
 .offer::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
@@ -386,7 +378,7 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 
 .panel {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.5rem; box-shadow: var(--shadow-sm);
+  padding: 1.3rem;
 }
 .panel h2 { font-size: 1.2rem; padding-bottom: 0.7rem; margin-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
 
@@ -425,7 +417,7 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
   box-shadow: var(--shadow-sm);
   transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
 }
-.plan:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #CFE3D7; }
+.plan:hover { border-color: var(--brand); }
 .plan-prepaid { background: linear-gradient(180deg, #FFFBF0 0%, #fff 40%); border-color: #F2E3BF; }
 .plan::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: linear-gradient(90deg, var(--brand), var(--brand-bright)); }
 .plan:hover { border-color: var(--brand); }
@@ -504,17 +496,17 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 }
 .phone {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.2rem 1.3rem 1.4rem; display: flex; flex-direction: column;
-  box-shadow: var(--shadow-sm); transition: transform 150ms ease, box-shadow 150ms ease;
+  padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column;
+  transition: border-color 150ms ease;
 }
-.phone:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.phone:hover { border-color: var(--brand); }
 .device {
-  width: 100%; aspect-ratio: 4 / 3.1; margin: 0 0 1.1rem;
+  width: 100%; aspect-ratio: 4 / 3; margin: 0 0 0.9rem;
   border-radius: var(--radius-sm);
-  background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F1F5F2 60%, #E7EFE9 100%);
+  background: #F4F6F5; border: 1px solid var(--line);
   display: grid; place-items: center; position: relative; overflow: hidden;
 }
-.device img { width: 68%; height: 80%; object-fit: contain; }
+.device img { width: 62%; height: 78%; object-fit: contain; }
 
 .device span { position: absolute; bottom: 0.5rem; right: 0.7rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9AA9B2; }
 .phone-brand { font-size: 0.72rem; font-weight: 700; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.2rem; }
@@ -634,37 +626,28 @@ code { font-size: 0.9em; background: var(--mist); padding: 0.1em 0.35em; border-
 
 .hero { isolation: isolate; }
 .hero > * { position: relative; z-index: 1; }
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(28rem 20rem at 80% 12%, rgba(255,255,255,0.28), transparent 68%);
-}
-.hero-art { position: relative; display: grid; place-items: center; min-height: 22rem; }
-.hero-art img.device-art { position: relative; z-index: 1; width: min(13.5rem, 56%); filter: drop-shadow(0 26px 40px rgba(0, 60, 25, 0.35)); }
+
+.hero-art { position: relative; display: grid; place-items: center; }
+.hero-art img.device-art { display: none; }
 .hero-deal-card {
-  position: absolute; z-index: 2; left: 0; bottom: 1rem; width: min(17rem, 82%);
-  background: #fff; border-radius: var(--radius); padding: 1rem 1.1rem;
-  box-shadow: 0 18px 40px rgba(0, 45, 20, 0.28);
-  display: grid; gap: 0.3rem; text-align: left;
+  position: relative; width: 100%;
+  background: #fff; border-radius: var(--radius); padding: 1.3rem 1.4rem;
+  display: grid; gap: 0.35rem; text-align: left; border-top: 5px solid var(--accent);
 }
-.hero-deal-card b { font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.hero-deal-card b { font-size: 1.45rem; font-weight: 700; color: var(--ink); line-height: 1.15; }
+.hero-deal-card::before {
+  content: "This week in our stores"; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-dark);
+}
 .hero-deal-card small { font-size: 0.8rem; color: var(--slate); line-height: 1.35; }
 .hero-deal-card .cta {
   justify-self: start; margin-top: 0.35rem;
   background: var(--brand); color: #fff; font-size: 0.82rem; font-weight: 700;
   border-radius: 999px; padding: 0.4rem 0.9rem;
 }
-@media (max-width: 60rem) {
-  .hero-deal-card { position: static; width: 100%; margin-top: 1rem; }
-  .hero-art img.device-art { width: min(12rem, 54%); }
-}
-.hero-art .halo {
-  position: absolute; width: min(21rem, 76%); aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0) 100%);
-}
-.hero-art .ring {
-  position: absolute; width: min(26rem, 94%); aspect-ratio: 1; border-radius: 50%;
-  border: 1.5px dashed rgba(255, 255, 255, 0.45);
-}
+
+.hero-art .halo { display: none; }
+.hero-art .ring { display: none; }
 .handset {
   position: relative; width: min(13rem, 48%); aspect-ratio: 9 / 18.5;
   border-radius: 2rem; padding: 0.5rem;
