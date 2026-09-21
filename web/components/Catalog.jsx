@@ -319,9 +319,14 @@ export function PhoneGrid({ phones, limit = 0, controls = false, assetBase = "" 
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {list.map((p) => (
           <li key={p.id} className="flex flex-col rounded-lg border border-line bg-white p-4 hover:border-brand">
-            <div className="mb-3 grid aspect-[4/3] place-items-center overflow-hidden rounded border border-line bg-[#f4f6f5]">
+            <div className="mb-3 grid aspect-[4/3] place-items-center overflow-hidden rounded border border-line bg-white">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={deviceArt(p, assetBase)} alt={p.name} loading="lazy" className="h-[78%] w-[62%] object-contain" />
+              <img
+                src={p.photo ? `${assetBase}/${p.photo}` : deviceArt(p, assetBase)}
+                alt={p.name}
+                loading="lazy"
+                className={p.photo ? "h-full w-full object-cover" : "h-[78%] w-[62%] object-contain"}
+              />
             </div>
             <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-muted">{p.brand}</p>
             <h3 className="mt-0.5 text-[17px] font-bold">{p.name}</h3>

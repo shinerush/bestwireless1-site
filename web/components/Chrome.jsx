@@ -112,7 +112,7 @@ export function Footer() {
   const cols = [
     ["Shop", [["/phones/", "Phones"], ["/plans/", "Plans"], ["/deals/", "Deals"], [CRICKET + "/shop/bring-your-phone", "Bring your own phone"]]],
     ["Stores", [["/stores/", "All locations"], ["/stores/#nc", "North Carolina"], ["/stores/#va", "Virginia"]]],
-    ["Company", [["/about/", "About us"], ["/careers/", "Careers"], ["/contact/", "Contact us"]]],
+    ["Company", [["/about/", "About us"], ["/careers/", "Careers"], ["/contact/", "Contact us"], ["/credits/", "Photo credits"]]],
     ["Cricket Wireless", [[CRICKET + "/quickpay.html", "Pay your bill"], [CRICKET + "/map.html", "Coverage map"], [CRICKET + "/support", "Cricket support"]]],
   ];
   return (
@@ -146,7 +146,9 @@ export function Footer() {
           Best Wireless 1, Inc. is an authorized retailer of Cricket Wireless. Cricket, Cricket Wireless and
           related marks are trademarks of AT&amp;T Intellectual Property. Offers, pricing and availability are set
           by Cricket Wireless and are subject to change without notice. Not all offers are available at every
-          location. Coverage is not available everywhere. © {new Date().getFullYear()} Best Wireless 1, Inc.
+          location. Coverage is not available everywhere. Device photographs are for illustration; see{" "}
+          <Link href="/credits/" className="text-[#c7dbef] underline">photo credits</Link>. ©{" "}
+          {new Date().getFullYear()} Best Wireless 1, Inc.
         </p>
       </div>
     </footer>

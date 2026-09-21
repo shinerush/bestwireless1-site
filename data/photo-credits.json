@@ -1,0 +1,62 @@
+{
+  "_README": "Photos pulled from Wikimedia Commons by tools/fetch-photos.mjs. Each licence requires the credit shown here to stay visible on the site (see the photo credits line in the footer). Replace these with Cricket dealer brand-kit images when they arrive.",
+  "updated": "2026-09-21",
+  "credits": {
+    "iphone-17-pro-max": {
+      "file": "assets/photos/iphone-17-pro-max.jpg",
+      "title": "About iPhone 16 Pro Max Natural Titanium.jpg",
+      "author": "メイド理世",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:About_iPhone_16_Pro_Max_Natural_Titanium.jpg"
+    },
+    "iphone-16": {
+      "file": "assets/photos/iphone-16.jpg",
+      "title": "About iPhone 16 Plus in Pink.jpg",
+      "author": "メイド理世",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:About_iPhone_16_Plus_in_Pink.jpg"
+    },
+    "galaxy-a17": {
+      "file": "assets/photos/galaxy-a17.jpg",
+      "title": "Samsung Galaxy A40 und Samsung Galaxy A15 20240529 HOF7492 RAW-Export cens.png",
+      "author": "PantheraLeo1359531",
+      "licence": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_A40_und_Samsung_Galaxy_A15_20240529_HOF7492_RAW-Export_cens.png"
+    },
+    "galaxy-s25-fe": {
+      "file": "assets/photos/galaxy-s25-fe.jpg",
+      "title": "Samsung Galaxy S24 Ultra 02.jpg",
+      "author": "Vis M",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S24_Ultra_02.jpg"
+    },
+    "moto-g-stylus-2025": {
+      "file": "assets/photos/moto-g-stylus-2025.jpg",
+      "title": "Mapillary (Zuleica2024) 2024-08-17 15H28M38S000 (527971963226051 at rv9eXnUBAMQ4aKCd5uEc1k) taken with motorola moto g(10).jpg",
+      "author": "Zuleica2024",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mapillary_(Zuleica2024)_2024-08-17_15H28M38S000_(527971963226051_at_rv9eXnUBAMQ4aKCd5uEc1k)_taken_with_motorola_moto_g(10).jpg"
+    },
+    "razr-2025": {
+      "file": "assets/photos/razr-2025.jpg",
+      "title": "Macon, GA - Eisenhower Crossing Entrance Sign.jpg",
+      "author": "Randomname123456",
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Macon,_GA_-_Eisenhower_Crossing_Entrance_Sign.jpg"
+    },
+    "apple-watch-series-11": {
+      "file": "assets/photos/apple-watch-series-11.jpg",
+      "title": "AppleWatchAppleStore.jpg",
+      "author": "Raysonho @ Open Grid Scheduler / Grid Engine",
+      "licence": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:AppleWatchAppleStore.jpg"
+    },
+    "hero-store": {
+      "file": "assets/photos/hero-store.jpg",
+      "title": "Réparateur-dépanneur de téléphones mobiles 1.jpg",
+      "author": "Karim Diarra",
+      "licence": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:R%C3%A9parateur-d%C3%A9panneur_de_t%C3%A9l%C3%A9phones_mobiles_1.jpg"
+    }
+  }
+}

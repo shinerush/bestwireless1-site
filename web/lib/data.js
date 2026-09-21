@@ -42,8 +42,19 @@ export function getPlans() {
   return read("plans.json");
 }
 
+export function getPhotoCredits() {
+  try {
+    return read("photo-credits.json").credits ?? {};
+  } catch {
+    return {};
+  }
+}
+
 export function getPhones() {
-  return read("phones.json").phones.sort((a, b) => (a.priority || 99) - (b.priority || 99));
+  const photos = getPhotoCredits();
+  return read("phones.json")
+    .phones.map((p) => ({ ...p, photo: photos[p.id]?.file ?? null }))
+    .sort((a, b) => (a.priority || 99) - (b.priority || 99));
 }
 
 /* Helpers shared by pages */

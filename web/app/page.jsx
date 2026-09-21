@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { DealGrid, PhoneGrid, PlanFinder, PlanGrid } from "@/components/Catalog";
 import { StoreFinder } from "@/components/Stores";
-import { CRICKET, getInStoreOffers, getOffers, getPhones, getPlans, getStores } from "@/lib/data";
+import { CRICKET, getInStoreOffers, getOffers, getPhones, getPhotoCredits, getPlans, getStores } from "@/lib/data";
 
 const FACTS = [
   ["5G on the AT&T network", "M5 12.5a9 9 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"],
@@ -16,6 +16,8 @@ export default function HomePage() {
   const plans = getPlans();
   const offers = getOffers();
   const topOffer = getInStoreOffers()[0] ?? null;
+  const base = process.env.BASE_PATH || "";
+  const heroPhoto = getPhotoCredits()["hero-store"] ?? null;
   const nc = stores.filter((s) => s.state === "NC").length;
   const va = stores.filter((s) => s.state === "VA").length;
 
@@ -50,7 +52,18 @@ export default function HomePage() {
           </div>
 
           {topOffer ? (
-            <div className="rounded-lg border-t-4 border-gold bg-white p-6 text-ink">
+            <div className="overflow-hidden rounded-lg bg-white text-ink">
+              {heroPhoto ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={`${base}/${heroPhoto.file}`}
+                  alt="Inside a mobile phone store"
+                  width="1000"
+                  height="640"
+                  className="h-44 w-full object-cover sm:h-52"
+                />
+              ) : null}
+              <div className="border-t-4 border-gold p-6">
               <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-brand-dark">
                 This week in our stores
               </p>
@@ -65,6 +78,7 @@ export default function HomePage() {
               >
                 See the deal
               </Link>
+              </div>
             </div>
           ) : null}
         </div>
